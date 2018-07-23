@@ -1,0 +1,188 @@
+include ../../../../templates/admin
+
+block main
+
+    section#main-content
+      section.wrapper.site-min-height
+        .row.mt
+          .col-md-12
+            .content-panel
+              table.table.table-striped.table-advance.table-hover
+                h4
+                  | Regular Member
+                  button.btn.btn-theme(style='margin-left: 5px;', type='button', data-toggle='modal', data-target='#add')
+                    i.fa.fa-user-plus
+                    |  Add Member
+                thead
+                  tr
+                    th
+                      i.fa.fa-bookmark
+                      |  ID
+                    th
+                      i.fa.fa-user
+                      |  Name
+                    th
+                      i.fa.fa-home
+                      |  Branch
+                    th
+                      i.fa.fa-phone
+                      |  Contact
+                    th
+                      i.fa.fa-bookmark
+                      |  Membership
+                    th
+                      i.fa.fa-edit
+                      |  Action
+                tbody
+                  tr
+                    td 1
+                    td.hidden-phone John Doe
+                    td All
+                    td  09999888776
+                    td
+                      span.label.label-warning Gold
+                      |  - Interbranch
+                    td
+                      button.btn.btn-primary.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Freeze Account')
+                        i.fa.fa-snowflake
+                      button.btn.btn-success.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Edit Account')
+                        i.fa.fa-edit
+                      button.btn.btn-warning.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Suspend Account')
+                        i.fa.fa-exclamation-circle
+                      button.btn.btn-danger.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Remove Account Permanently')
+                        i.fa.fa-trash-alt
+            // /content-panel
+    // MODAL ADD MEMBER
+    #add.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4#myModalLabel.modal-title Add Member Manually
+          form(action='POST', method='')
+            .modal-body
+              .container-fluid
+                .row
+                  .col-xs-12
+                    h5 Personal Info
+                    hr
+                .container-fluid(style='padding:1rem 4rem 1rem 4rem;')
+                  .row
+                    .col-md-6
+                      .form-group
+                        label.control-label First Name
+                        input.form-control(type='text')
+                    .col-md-6
+                      .form-group
+                        label.control-label Last Name
+                        input.form-control(type='text')
+                  .row
+                    .col-md-5
+                      .input-group
+                        .input-group-addon Gender:
+                        label.radio
+                          | Male
+                          input(type='radio', checked='', name='gen')
+                          span.dot
+                        label.radio
+                          | Female
+                          input(type='radio', name='gen')
+                          span.dot
+                    .col-md-7
+                      .form-group
+                        label.control-label Date of Birth
+                        input#datepicker.form-control(type='text')
+                  .row
+                    .col-md-12
+                      .form-group
+                        label.control-label Address
+                        input.form-control(type='text')
+                  .row
+                    .col-md-6
+                      .form-group
+                        label.control-label Mobile Number
+                        input.form-control(type='text', value='+639')
+                    .col-md-6
+                      .form-group
+                        label.control-label Email
+                        input.form-control(type='email')
+                .row
+                  .col-md-12
+                    h5 Login Information
+                    hr
+                .container-fluid(style='padding:1rem 4rem 1rem 4rem;')
+                  .row
+                    .col-md-6
+                      .form-group
+                        label.control-label Username
+                        input.form-control(type='text')
+                    .col-md-6
+                      .form-group
+                        label.control-label Password
+                        input.form-control(type='password')
+                  .row
+                    .col-md-4
+                      label(for='file') Display Image
+                      input#file.inputfile(type='file')
+                .row
+                  .col-md-12
+                    h5 More Information
+                    hr
+                .container-fluid(style='padding:1rem 4rem 1rem 4rem;')
+                  .row
+                    .col-md-12
+                      .form-group
+                        label.control-label Membership
+                        select.form-control
+                          option Select Membership... 
+                          option Gold Membership - (360 days)
+                          option Silver Membership - (120 days)
+                          option Bronze Membership - (30 days)
+                  .row
+                    .col-md-5
+                      .form-group
+                        label.control-label Type of Membership
+                        select#type.form-control(name='type')
+                          option(value='1') Interbranch
+                          option(value='2') Exclusive
+                    .col-md-7(style='color:gray; font-size:10pt')
+                      i
+                        p
+                          | Interbranch - Membership valid to all branches.
+                          br
+                          | Exclusive - Membership valid only to the branch you choose.
+                        p(style='margin:0;') Note: Rates vary on type of membership. "Interbranch" costs more.
+                  .row
+                    .col-md-6
+                      .form-group
+                        label.control-label Branch
+                        select#branch.form-control(disabled='')
+                          option Sta. Mesa
+                          option Marikina
+                    .col-md-6
+                      .form-group
+                        label.control-label Interested Area
+                        select.form-control
+                          option Select Interest... 
+                          option Body Building
+                          option Weight Gain
+                          option Weight Loss
+                          option General Fitness
+                  .row
+                    .col-md-5
+                      label.checkbox
+                        | Are you a Student?
+                        input#student(type='checkbox')
+                        span.check
+                      p#1 Uncheck if you are unwilling to provide proof.
+                    .col-md-7(style='color:gray; font-size:10pt')
+                      i
+                        p#2(style='display: none')
+                          | You can avail a student discount if we can confirm your claim. Give us proof
+                          | (eg. student ID, registration card etc.) through our branch near you.
+                          br
+                          br
+                          | We will not accept your request until you are verified
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Add Member

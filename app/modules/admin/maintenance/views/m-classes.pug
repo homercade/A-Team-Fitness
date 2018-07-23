@@ -1,0 +1,36 @@
+include ../../../../templates/admin
+
+block main
+  
+    section#main-content
+      section.wrapper.site-min-height
+        .row.mt
+          .col-md-12
+            .content-panel
+              table.table.table-striped.table-advance.table-hover
+                h4
+                  | All Classes
+                  button.btn.btn-theme(style='margin-left: 5px;', type='button', data-toggle='modal', data-target='#add')
+                    i.fa.fa-dumbbell
+                    |  Add Class
+                thead
+                  tr
+                    th
+                      i.fa.fa-bookmark
+                      |  ID
+                    th
+                      i.fa.fa-dumbbell
+                      |  Name
+                    th
+                      i.fa.fa-edit
+                      |  Action
+                tbody
+                  tr
+                    td 1
+                    td Zumba
+                    td
+                      button#edit.btn.btn-success.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Edit Account')
+                        i.fa.fa-edit
+                      button.btn.btn-danger.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Remove Account Permanently')
+                        i.fa.fa-trash-alt
+            // /content-panel

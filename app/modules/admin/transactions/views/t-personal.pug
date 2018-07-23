@@ -1,0 +1,59 @@
+include ../../../../templates/admin
+
+block main
+
+    section#main-content
+      section.wrapper.site-min-height
+        .row.mt
+          .col-md-12
+            .content-panel
+              table.table.table-striped.table-advance.table-hover
+                h4
+                  | Personal Training Manual Assignment
+                  button.btn.btn-theme(style='margin-left: 5px;', type='button', data-toggle='modal', data-target='#add')
+                    i.fa.fa-user-friends
+                    |  Assign PT
+                thead
+                  tr
+                    th
+                      i.fa.fa-bookmark
+                      |  ID
+                    th
+                      i.fa.fa-user
+                      |  Member
+                    th
+                      i.fa.fa-user-friends
+                      |  Trainer In-charge
+                    th
+                      i.fa.fa-home
+                      |  Branch
+                    th
+                      i.fa.fa-coins
+                      |  Sessions Bought
+                    th
+                      i.fa.fa-coins
+                      |  Sessions Left
+                    th
+                      i.fa.fa-dumbbell
+                      |  Working with
+                    th
+                      i.fa.fa-edit
+                      |  Action
+                tbody
+                  tr
+                    td
+                      | 1
+                    td John Doe
+                    td John Paul
+                    td  Sta. Mesa 
+                    td 10
+                    td 5
+                    td Weight Loss
+                    td
+                      button.btn.btn-info.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='View Account')
+                        i.fa.fa-search
+                      button.btn.btn-success.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Edit Account')
+                        i.fa.fa-edit
+                      button.btn.btn-danger.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Remove Account Permanently')
+                        i.fa.fa-trash-alt
+          // /content-panel

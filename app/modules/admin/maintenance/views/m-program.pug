@@ -1,0 +1,38 @@
+include ../../../../templates/admin
+
+block main
+
+    section#main-content
+      section.wrapper.site-min-height
+        .row.mt
+          .col-md-12
+            .content-panel
+              table.table.table-striped.table-advance.table-hover
+                h4
+                  | All Programs
+                  button.btn.btn-theme(style='margin-left: 5px;', type='button', data-toggle='modal', data-target='#add')
+                    i.fa.fa-dumbbell
+                    |  Add Programs
+                thead
+                  tr
+                    th
+                      i.fa.fa-bookmark
+                      |  ID
+                    th
+                      i.fa.fa-dumbbell
+                      |  Name
+                    th
+                      i.fa.fa-edit
+                      |  Action
+                tbody
+                  tr
+                    td 1
+                    td Sports Conditioning
+                    td
+                      button#view.btn.btn-info.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='View Program Details')
+                        i.fa.fa-search
+                      button#edit.btn.btn-success.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Edit Program')
+                        i.fa.fa-edit
+                      button.btn.btn-danger.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Remove Program Permanently')
+                        i.fa.fa-trash-alt
+            // /content-panel

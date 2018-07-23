@@ -1,0 +1,30 @@
+
+#edit{
+    background-color:blue;
+    padding:5px;
+    color:white;
+    border-radius:5px;
+    width: 60px;
+    height: 40px;
+    border:none;
+}
+#del{
+    border:none;
+    background-color:red;
+    padding:5px;
+    color:white;
+    border-radius:5px;
+    width: 60px;
+    height: 40px;
+}  
+#add{
+    background-color:green;
+    color:white;
+    border-radius:5px;
+    padding:5px;
+    border:none;
+}          
+/* style.
+  #navbar a:nth-of-type(2) > h5{
+    background: #12BBAD;
+  } */

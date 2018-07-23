@@ -1,0 +1,112 @@
+//- This is the master template. Basically all the other pages will
+//- extend this. This btw, is a Pug comment. This will not appear
+//- in your browser when you render the HTML.
+
+//- See here that I modified this a bit so I can use the base
+//- template for the login page
+extends ./base
+
+block main
+    section#container
+    // header start
+    header.header.black-bg
+        .sidebar-toggle-box
+            .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/')
+            b A-TEAM FITNESS
+        // logo end
+        .top-menu
+            ul.nav.pull-right.top-menu
+                li
+                    a.logout(href='/logout') Logout
+    aside
+    #sidebar.nav-collapse
+        // sidebar menu start
+        ul#nav-accordion.sidebar-menu
+            p.centered
+                a(href='profile.html')
+                    img.img-circle(src='../assets/img/ui-sam.jpg', width='60')
+            h5.centered ADMIN
+            li.mt
+                a(href='/')
+                    i.fa.fa-tachometer-alt
+                    span Dashboard
+            li.sub-menu
+                a(href='javascript:;')
+                    i.fa.fa-wrench
+                    span Maintenance
+                    i.fa.fa-caret-down(style='margin-left:5px;')
+                ul.sub
+                    li
+                        a(href='/staff') Staffs
+                    li
+                        a(href='/program') Programs
+                    li
+                        a(href='/classes') Classes
+                    li
+                        a(href='/trainer') Trainers
+                    li
+                        a(href='/specialization') Specialization
+                    li
+                        a(href='/discount') Discounts
+                    li
+                        a(href='/branch') Branch
+                    li
+                        a(href='/category') Membership Category
+                    li.sub-menu
+                        a(href='javascript:;')
+                            span Rates
+                            i.fa.fa-caret-down(style='margin-left:5px;')
+                        ul.sub
+                            li
+                                a(href='/membership') Membership Fee
+                            li
+                                a(href='/facility') Facility Rates
+                            li
+                                a(href='/general') General Fees
+                li.sub-menu
+                    a(href='javascript:;')
+                        i.fa.fa-book
+                        span Transaction
+                        i.fa.fa-caret-down(style='margin-left:5px;')
+                    ul.sub
+                        li
+                            a(href='/pending') Pending Request
+                        li.sub-menu
+                            a(href='javascript:;')
+                                span Members
+                                i.fa.fa-caret-down(style='margin-left:5px;')
+                            ul.sub
+                                li
+                                    a(href='/regular') Regular
+                                li
+                                    a(href='/freezed') Freezed
+                        li.sub-menu
+                            a(href='javascript:;')
+                                span Trainer Assignment
+                                i.fa.fa-caret-down(style='margin-left:5px;')
+                            ul.sub
+                                li
+                                    a(href='/personal') Personal Training
+                                li
+                                    a(href='/t-class') Group Classes
+                        li
+                            a(href='/t-event') Event
+                        li
+                            a(href='/payment') Payment
+                        li
+                            a(href='/income') Income
+
+                li.sub-menu
+                    a(href='/user')
+                        i.fa.fa-user
+                        span User Profile
+                li.sub-menu
+                    a(href='/utilities')
+                        i.fa.fa-cogs
+                        span Utilities
+                li.sub-menu
+                    a(href='/reports')
+                        i.fa.fa-th
+                        span Report

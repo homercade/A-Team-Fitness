@@ -1,0 +1,133 @@
+include ../../../../templates/admin
+
+block main
+    section#main-content
+        section.wrapper.site-min-height
+            .row.mt
+                .col-md-12
+                    .content-panel
+                        table.table.table-striped.table-advance.table-hover
+                            h4
+                                | All Branches
+                                button.btn.btn-theme(style='margin-left: 5px;', type='button', data-toggle='modal', data-target='#add')
+                                    i.fa.fa-home
+                                    |  Add Branch
+                            thead
+                                tr
+                                    th
+                                        i.fa.fa-bookmark
+                                        |  ID
+                                    th
+                                        i.fa.fa-home
+                                        |  Name
+                                    th
+                                        i.fa.fa-map-marker-alt
+                                        |  Address
+                                    th
+                                        i.fa.fa-calendar-alt
+                                        |  Date
+                                    th
+                                        i.fa.fa-user
+                                        |  Manager
+                                    th
+                                        i.fa.fa-edit
+                                        |  Action
+                            tbody
+                                tr
+                                    td 1
+                                    td A-Team Fitness
+                                    td 4408 Old. Sta. Mesa St. Sta. Mesa, Manila
+                                    td 06/27/2018
+                                    td John Doe
+                                    td
+                                        button#edit.btn.btn-success.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Edit Account')
+                                            i.fa.fa-edit
+                                        button.btn.btn-danger.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Remove Account Permanently')
+                                            i.fa.fa-trash-alt
+                    // /content-panel
+    // MODAL ADD MEMBER
+    #add.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h4#myModalLabel.modal-title Add Branch
+                form(action='POST', method='')
+                    .modal-body
+                        .container-fluid
+                            .container-fluid(style='padding:1rem 4rem 1rem 4rem;')
+                                .row
+                                    .col-md-12
+                                        .form-group
+                                            label.control-label Franchise Name
+                                            input.form-control(type='text')
+                                .row
+                                    .col-md-4
+                                        .form-group
+                                            label.control-label Full Address
+                                            input.form-control(type='text', placeholder='Street Number..')
+                                    .col-md-4
+                                        .form-group
+                                            input.form-control(style='margin-top:17%;', type='text', placeholder='Street..')
+                                    .col-md-4
+                                        .form-group
+                                            input.form-control(style='margin-top:17%;', type='text', placeholder='City..')
+                                .row
+                                    .col-md-12
+                                        .form-group
+                                            label.control-label Date
+                                            input.form-control.date(type='text')
+                                .row
+                                    .col-md-12
+                                        .form-group
+                                            label.control-label Staff In-charge
+                                            select#staff.form-control
+                                                option Select Staff... 
+                                                option John Doe
+                                                option Doe John
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Close
+                        button.btn.btn-primary(type='button') Add Branch
+    // MODAL EDIT MEMBER
+    #edit-modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h4#myModalLabel.modal-title Edit Branch Information
+                form(action='POST', method='')
+                    .modal-body
+                        .container-fluid
+                            .container-fluid(style='padding:1rem 4rem 1rem 4rem;')
+                                .row
+                                    .col-md-12
+                                        .form-group
+                                            label.control-label Franchise Name
+                                            input.form-control(type='text')
+                                .row
+                                    .col-md-4
+                                        .form-group
+                                            label.control-label Full Address
+                                            input.form-control(type='text', placeholder='Street Number..')
+                                    .col-md-4
+                                        .form-group
+                                            input.form-control(style='margin-top:17%;', type='text', placeholder='Street..')
+                                    .col-md-4
+                                        .form-group
+                                            input.form-control(style='margin-top:17%;', type='text', placeholder='City..')
+                                .row
+                                    .col-md-12
+                                        .form-group
+                                            label.control-label Date
+                                            input.form-control.date(type='text')
+                                .row
+                                    .col-md-12
+                                        .form-group
+                                            label.control-label Staff In-charge
+                                            select#staff.form-control
+                                                option Select Staff... 
+                                                option John Doe
+                                                option Doe John
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Close
+                        button.btn.btn-primary(type='button') Save

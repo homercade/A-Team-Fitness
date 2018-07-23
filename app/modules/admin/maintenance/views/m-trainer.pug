@@ -1,0 +1,58 @@
+include ../../../../templates/admin
+
+block main
+
+    section#main-content
+      section.wrapper.site-min-height
+        .row.mt
+          .col-md-12
+            .content-panel
+              table.table.table-striped.table-advance.table-hover
+                h4
+                  | All Trainers
+                  button.btn.btn-theme(style='margin-left: 5px;', type='button', data-toggle='modal', data-target='#add')
+                    i.fa.fa-user-plus
+                    |  Add Trainer
+                thead
+                  tr
+                    th
+                      i.fa.fa-bookmark
+                      |  ID
+                    th
+                      i.fa.fa-user
+                      |  Name
+                    th
+                      i.fa.fa-dumbbell
+                      |  Specialization
+                    th
+                      i.fa.fa-clock
+                      |  Schedule
+                    th
+                      i.fa.fa-calendar-alt
+                      |  Age
+                    th
+                      i.fa.fa-home
+                      |  Branch
+                    th
+                      i.fa.fa-phone
+                      |  Contact
+                    th
+                      i.fa.fa-edit
+                      |  Action
+                tbody
+                  tr
+                    td
+                      | 1
+                    td John Doe
+                    td Body Building
+                    td M/W/F
+                    td 31
+                    td  Sta. Mesa 
+                    td  09999888776 
+                    td
+                      button#view.btn.btn-info.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='View Trainer')
+                        i.fa.fa-search
+                      button#edit.btn.btn-success.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Edit Trainer')
+                        i.fa.fa-edit
+                      button.btn.btn-danger.btn-xs(data-toggle='popover', data-trigger='hover', data-placement='top', data-content='Remove Trainer Permanently')
+                        i.fa.fa-trash-alt
